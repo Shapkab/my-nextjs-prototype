@@ -1,0 +1,10 @@
+{
+  "tailwindConfig": "./tailwind.config.ts",
+  "tailwindAttributes": ["myClassList"],
+  "tailwindFunctions": ["clsx"],
+  "plugins": [
+    "prettier-plugin-svelte",
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-tailwindcss"
+  ]
+}

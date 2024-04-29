@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*header {*/
+/*  !*position: static;*!*/
+/*  text-align: center;*/
+/*  text-transform: uppercase;*/
+
+/*  !*color: crimson;*!*/
+/*  !*background: linear-gradient(to right, #3f5efb, #fc466b);*!*/
+/*  !*-webkit-background-clip: text;*!*/
+/*  !*-webkit-text-fill-color: transparent;*!*/
+/*  !*font-size: 2rem;*!*/
+/*}*/
+
+/*nav {*/
+/*  position: static;*/
+/*}*/
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 5rem; /* Footer height */
+}
+
+:root {
+}

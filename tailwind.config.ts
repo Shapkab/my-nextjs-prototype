@@ -2,10 +2,11 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: ["class"],
   theme: {
     extend: {
       backgroundImage: {
@@ -14,7 +15,24 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    // colors: {
+    //   transparent: "transparent",
+    //   current: "currentColor",
+    //   white: "#ffffff",
+    //   purple: "#3f3cbb",
+    //   midnight: "#121063",
+    //   metal: "#565584",
+    //   tahiti: "#3ab7bf",
+    //   silver: "#ecebff",
+    //   bubblegum: "#ff77e9",
+    //   bermuda: "#78dcca",
+    // },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/typography"),
+    require("tailwindcss-children"),
+  ],
 };
 export default config;
