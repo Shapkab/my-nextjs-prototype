@@ -10,15 +10,27 @@ export const links = [
 export const jobExperiences: JobPosition = [
   {
     title: "Industrial civil engineering",
-    responsibilities: ["Work in AutoCad"],
+    skills: ["AutoCad", "Scad", "Excel"],
+    responsibilities: ["Planning"],
   },
-  { title: "Quality assurance engineer", responsibilities: ["Work with Java"] },
+  {
+    title: "Quality assurance engineer",
+    skills: ["Java"],
+    responsibilities: ["Create test script"],
+  },
   {
     title: "Lead Quality assurance engineer",
-    responsibilities: ["Work with Typescript"],
+    skills: ["Typescript"],
+    responsibilities: [
+      "Planning sprint",
+      "Managing tasks",
+      "Create test script",
+      "Check pull request",
+    ],
   },
   {
     title: "Junior Frontend engineer",
-    responsibilities: ["Work with Next.js", "Work with Vercel"],
+    skills: ["Next.js", "Vercel", "Tailwind", "Git"],
+    responsibilities: ["Planning sprint"],
   },
 ] as JobPosition;

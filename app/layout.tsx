@@ -1,3 +1,5 @@
+import Footer from " /components/footer";
+import cn from " /lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import React from "react";
@@ -35,8 +37,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <main>{children}</main>
+      <body className={cn("flex min-h-screen flex-col", `${inter.className}`)}>
+        <main className="flex-grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );

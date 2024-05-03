@@ -1,44 +1,19 @@
-import Footer from " /components/footer";
+"use client";
+
 import Navbar from " /components/navbar";
+import { Dropdown } from " /components/ui/dropdown";
 import HTag from " /components/ui/hTag";
 import { jobExperiences } from " /lib/data";
-import Image from "next/image";
 
 export default function About() {
   return (
     <div>
       <Navbar />
-      {/*<div className="flex flex-col items-center justify-between lg:flex-row lg:items-start">*/}
-      {/*  <div className="order-2 mt-8 w-full flex-1 rounded-3xl bg-white p-8 shadow-xl sm:w-96 lg:order-1 lg:w-full lg:rounded-r-none">*/}
-      {/*    <div className="mb-7 flex items-center border-b border-gray-300 pb-7">*/}
-      {/*      <div className="ml-5">*/}
-      {/*        <p className="block text-2xl font-semibold">*/}
-      {/*          Industrial civil engineering*/}
-      {/*        </p>*/}
-      {/*        <span className="align-top text-xl font-medium text-gray-500">*/}
-      {/*          &thinsp;*/}
-      {/*        </span>*/}
-      {/*      </div>*/}
-      {/*      <ul className="mb-7 font-medium text-gray-500">*/}
-      {/*        <li className="mb-2 flex text-lg">*/}
-      {/*          <Image*/}
-      {/*            src="https://res.cloudinary.com/williamsondesign/check-grey.svg"*/}
-      {/*            alt="check-grey"*/}
-      {/*            width={20}*/}
-      {/*            height={20}*/}
-      {/*          />*/}
-      {/*          <span className="ml-3">Work in AutoCad</span>*/}
-      {/*        </li>*/}
-      {/*      </ul>*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
-
       {jobExperiences.map((job) => {
         return (
           <div
             key={job.title}
-            className="mt-8 w-full flex-1 rounded-3xl bg-white p-8 shadow-xl sm:w-96 lg:order-1 lg:w-full lg:rounded-r-none"
+            className="hover-smooth-up transition-smooth m-9 w-1/3 cursor-pointer rounded-3xl bg-amber-50 p-8 shadow-xl hover:bg-amber-100"
           >
             <HTag
               tag="h3"
@@ -46,25 +21,27 @@ export default function About() {
             >
               {job.title}
             </HTag>
-            <ul className="mb-7 flex font-medium text-gray-500">
-              {job.responsibilities.map((responsibility) => {
+            <ul className="m-2 font-medium text-gray-500">
+              {job.skills.map((skill) => {
                 return (
-                  <li key={responsibility} className="mb-2 flex text-lg">
-                    <Image
-                      src="https://res.cloudinary.com/williamsondesign/check-grey.svg"
-                      alt="check-grey"
-                      width={20}
-                      height={20}
-                    />
-                    <span className="ml-3">{responsibility}</span>
+                  <li key={skill} className="mb-2 inline text-lg">
+                    <span className="ml-3">{skill}</span>
                   </li>
                 );
               })}
             </ul>
+            <div>
+              {job.responsibilities.map((resp) => {
+                return (
+                  <Dropdown classname="" key={resp}>
+                    {resp}
+                  </Dropdown>
+                );
+              })}
+            </div>
           </div>
         );
       })}
-      <Footer />
     </div>
   );
 }

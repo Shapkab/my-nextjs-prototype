@@ -5,5 +5,6 @@ export type Links = {
 
 export type JobPosition = {
   title: string;
+  skills: string[];
   responsibilities: string[];
 }[];

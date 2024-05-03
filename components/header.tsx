@@ -4,8 +4,8 @@ import HTag from " /components/ui/hTag";
 
 export default function Header() {
   return (
-    <header className="flex min-h-52 min-w-full items-center justify-center bg-fuchsia-50">
-      <div className="mx-auto w-full max-w-lg rounded-lg bg-fuchsia-50 px-10 py-8 shadow-xl">
+    <header className="flex min-h-52 min-w-full items-center justify-center bg-amber-50">
+      <div className="mx-auto w-full max-w-lg rounded-lg bg-amber-50 px-10 py-8 shadow-xl">
         <div className="mx-auto max-w-md space-y-6">
           <HTag
             tag="h1"
@@ -16,7 +16,7 @@ export default function Header() {
               aria-hidden={true}
               role={"presentation"}
             ></span>
-            <span className="mx-4 block flex-none bg-black px-4 py-2.5 text-xs font-medium uppercase leading-none text-fuchsia-200">
+            <span className="mx-4 block flex-none bg-black px-4 py-2.5 text-xs font-medium uppercase leading-none text-amber-200">
               My Portfolio
             </span>
             <span
