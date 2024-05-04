@@ -37,3 +37,9 @@ Fix it
     @apply;
   }
 }
+
+@layer utilities {
+  .gradient-pink-purple {
+    @apply bg-gradient-to-r from-pink-300 to-purple-300;
+  }
+}

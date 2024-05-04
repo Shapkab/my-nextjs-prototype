@@ -1,38 +1,54 @@
 import cn from " /lib/utils";
-import React from "react";
+import React, { useState } from "react";
 
-export interface itemsMenuProps {
+export interface ItemsMenuProps {
   classname: string;
-  children: React.ReactNode;
+  children: React.ReactNode[];
 }
 
-export function Dropdown({ classname, children }: itemsMenuProps) {
+export function Dropdown({ classname, children }: ItemsMenuProps) {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const toggle = () => {
+    setIsOpen((old) => !old);
+  };
+
+  const transClass = isOpen ? "flex" : "hidden";
+
   return (
     <>
-      <button
-        data-ripple-light="true"
-        data-popover-target="menu-1"
-        data-popover-nested="true"
-        className={cn(
-          "flex select-none rounded-lg bg-gray-900 px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none",
-          classname,
-        )}
-      >
-        Open description
-      </button>
-      <ul
-        role="menu"
-        data-popover="menu"
-        data-popover-placement="bottom"
-        className="border-blue-gray-50 text-blue-gray-500 shadow-blue-gray-500/10 absolute z-10 min-w-[180px] overflow-auto rounded-md border bg-white p-3 font-sans text-sm font-normal shadow-lg focus:outline-none"
-      >
-        <li
-          role="menuitem"
-          className="hover:bg-blue-gray-50 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:text-blue-gray-900 active:bg-blue-gray-50 active:text-blue-gray-900 block w-full cursor-pointer select-none rounded-md px-3 pb-2 pt-[9px] text-start leading-tight transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+      <div className={cn("", classname)}>
+        <button
+          className={cn(
+            "flex rounded-lg bg-gray-600 px-6 py-3 text-center text-white",
+            classname,
+          )}
+          onClick={toggle}
         >
-          {children}
-        </li>
-      </ul>
+          Open description
+        </button>
+        {children.map((item) => {
+          return (
+            <ul
+              key="item"
+              className={cn(
+                "text-blue-gray-500 gradient-pink-purple duration-600 translate-x-full rounded-lg border bg-white p-3 ease-in-out",
+                transClass,
+              )}
+            >
+              <li className="">{item}</li>
+            </ul>
+          );
+        })}
+      </div>
+      {isOpen ? (
+        <div
+          className="fixed bottom-0 left-0 right-0 top-0 z-20"
+          onClick={toggle}
+        ></div>
+      ) : (
+        <></>
+      )}
     </>
   );
 }

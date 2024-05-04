@@ -13,14 +13,14 @@ export default function About() {
         return (
           <div
             key={job.title}
-            className="hover-smooth-up transition-smooth m-9 w-1/3 cursor-pointer rounded-3xl bg-amber-50 p-8 shadow-xl hover:bg-amber-100"
+            className="hover-smooth-up transition-smooth m-9 grid w-1/2 cursor-pointer grid-cols-2 place-items-center gap-3 rounded-3xl bg-amber-50 p-8 shadow-xl hover:bg-amber-100"
           >
-            <HTag
-              tag="h3"
-              classname="flex items-center text-2xl font-semibold ml-5"
-            >
+            <HTag tag="h3" classname="text-center text-2xl font-semibold ml-5">
               {job.title}
             </HTag>
+            <div>
+              <Dropdown classname="right-0">{job.responsibilities}</Dropdown>
+            </div>
             <ul className="m-2 font-medium text-gray-500">
               {job.skills.map((skill) => {
                 return (
@@ -30,15 +30,6 @@ export default function About() {
                 );
               })}
             </ul>
-            <div>
-              {job.responsibilities.map((resp) => {
-                return (
-                  <Dropdown classname="" key={resp}>
-                    {resp}
-                  </Dropdown>
-                );
-              })}
-            </div>
           </div>
         );
       })}
