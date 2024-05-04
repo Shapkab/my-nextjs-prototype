@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="flex-justify-center sticky bottom-0 mt-auto text-center text-amber-500">
+    <footer className="flex-justify-center bottom-0 mt-auto text-center text-amber-500">
       <ul className="mt-3 flex-wrap items-center text-sm font-medium text-orange-200 dark:text-gray-400">
         <li>
           <Link

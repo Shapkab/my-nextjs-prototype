@@ -9,6 +9,12 @@ export default function About() {
   return (
     <div>
       <Navbar />
+      <HTag tag="h2" classname="ml-5">
+        I`m Iryna I`m looking for an engineering team to work with a developing
+        project that to provide me interesting work that I can learn from and
+        contribute to. I want to improve my technical skills. And be a part of
+        healthy development team.
+      </HTag>
       {jobExperiences.map((job) => {
         return (
           <div

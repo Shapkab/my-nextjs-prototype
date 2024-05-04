@@ -19,27 +19,34 @@ export function Dropdown({ classname, children }: ItemsMenuProps) {
     <>
       <div className={cn("", classname)}>
         <button
+          id="dropdownDefaultButton"
+          type="button"
+          data-target="dropdown-with-dropright"
           className={cn(
-            "flex rounded-lg bg-gray-600 px-6 py-3 text-center text-white",
+            "flex rounded-lg bg-gray-600 px-6 py-3 text-center text-white transition-all duration-500",
             classname,
           )}
           onClick={toggle}
         >
           Open description
         </button>
-        {children.map((item) => {
-          return (
-            <ul
-              key="item"
-              className={cn(
-                "text-blue-gray-500 gradient-pink-purple duration-600 translate-x-full rounded-lg border bg-white p-3 ease-in-out",
-                transClass,
-              )}
-            >
-              <li className="">{item}</li>
-            </ul>
-          );
-        })}
+        <div
+          className={cn(
+            "text-blue-gray-500 gradient-pink-purple open absolute right-0 top-0 mt-2 w-64 translate-x-64 rounded-lg border bg-white p-3",
+            transClass,
+          )}
+          aria-labelledby="dropdownDefaultButton"
+        >
+          <ul className="h-min py-2">
+            {children.map((item) => {
+              return (
+                <li key="item" className="block py-2 pl-5">
+                  {item}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
       {isOpen ? (
         <div
