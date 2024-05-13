@@ -8,3 +8,7 @@ export type JobPosition = {
   skills: string[];
   responsibilities: string[];
 }[];
+
+export type ImgData = {
+  image: string;
+}[];

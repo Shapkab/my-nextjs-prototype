@@ -7,6 +7,6 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
 
-export default function Button({ children, className }: ButtonProps) {
-  return <button className={cn("btn-teal", className)}>{children}</button>;
+export default function Button({ children, className, ...props}: ButtonProps) {
+  return <button className={cn("btn-teal", className)} {...props}>{children}</button>;
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import cn from " /lib/utils";
 import React, { useState } from "react";
 
@@ -16,46 +18,38 @@ export function Dropdown({ classname, children }: ItemsMenuProps) {
   const transClass = isOpen ? "flex" : "hidden";
 
   return (
-    <>
-      <div className={cn("", classname)}>
-        <button
-          id="dropdownDefaultButton"
-          type="button"
-          data-target="dropdown-with-dropright"
-          className={cn(
-            "flex rounded-lg bg-gray-600 px-6 py-3 text-center text-white transition-all duration-500",
-            classname,
-          )}
-          onClick={toggle}
-        >
-          Open description
-        </button>
-        <div
-          className={cn(
-            "text-blue-gray-500 gradient-pink-purple open absolute right-0 top-0 mt-2 w-64 translate-x-64 rounded-lg border bg-white p-3",
-            transClass,
-          )}
-          aria-labelledby="dropdownDefaultButton"
-        >
-          <ul className="h-min py-2">
-            {children.map((item) => {
-              return (
-                <li key="item" className="block py-2 pl-5">
-                  {item}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </div>
-      {isOpen ? (
-        <div
-          className="fixed bottom-0 left-0 right-0 top-0 z-20"
-          onClick={toggle}
-        ></div>
-      ) : (
-        <></>
-      )}
-    </>
+    <div className="relative place-self-end">
+      <button
+        id="dropdownDefaultButton"
+        type="button"
+        data-target="dropdown-with-dropright"
+        aria-expanded={isOpen}
+        className="flex rounded-lg bg-gray-600 p-5 text-center text-white transition-all duration-500"
+        onClick={toggle}
+      >
+        Open description
+      </button>
+      <ul
+        className={cn(
+          "absolute top-0 grid translate-x-52 grid-cols-8 divide-x rounded-lg border p-3",
+          transClass,
+          classname,
+        )}
+        aria-labelledby="dropdownDefaultButton"
+      >
+        {children.map((item, index) => {
+          return (
+            <li key={index} className="p-2 text-xs ">
+              {item}
+            </li>
+          );
+        })}
+        {isOpen ? (
+          <div className="absolute right-0 top-0" onClick={toggle}></div>
+        ) : (
+          <></>
+        )}
+      </ul>
+    </div>
   );
 }

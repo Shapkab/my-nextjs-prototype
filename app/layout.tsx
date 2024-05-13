@@ -1,5 +1,4 @@
 import Footer from " /components/footer";
-import cn from " /lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import React from "react";
@@ -36,9 +35,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth md:scroll-auto">
-      <body className={cn("flex min-h-screen flex-col", `${inter.className}`)}>
-        <main className="flex-1 overflow-y-auto">{children}</main>
+    <html lang="en" className="scroll-smooth">
+      <body className={inter.className}>
+        <main className="flex-grow min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>

@@ -4,7 +4,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="flex-justify-center bottom-0 mt-auto text-center text-amber-500">
+    <footer className="block bottom-0">
+        <div className="flex-justify-center text-center text-amber-500">
       <ul className="mt-3 flex-wrap items-center text-sm font-medium text-orange-200 dark:text-gray-400">
         <li>
           <Link
@@ -18,6 +19,7 @@ export default function Footer() {
       <p className="gap-2 rounded-lg px-4 py-2 text-center text-amber-500 opacity-80">
         © {new Date().getFullYear()} MIT Licensed
       </p>
+        </div>
     </footer>
   );
 }

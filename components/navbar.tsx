@@ -8,9 +8,9 @@ export default function Navbar() {
   const pathName = usePathname();
 
   return (
-    <nav className="rounded border border-gray-100 bg-amber-100 px-2 py-2.5 shadow sm:px-4">
+    <nav className="relative h-20 rounded border border-gray-100 bg-amber-100 px-2 py-2.5 blur-[0.5px]">
       <ul
-        className="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium"
+        className="my-4 flex flex-col items-center text-lg md:flex-row md:space-x-8 md:font-medium"
         id="nav"
       >
         {links.map((link) => {

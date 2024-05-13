@@ -9,7 +9,7 @@ export default function Header() {
         <div className="mx-auto max-w-md space-y-6">
           <HTag
             tag="h1"
-            classname="my-8 flex flex-row flex-nowrap items-center"
+            className="my-8 flex flex-row flex-nowrap items-center"
           >
             <span
               className="block flex-grow border-t border-black"
