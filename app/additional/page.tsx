@@ -31,7 +31,7 @@ export default function Additional() {
 
   const handleBgColorChange = useCallback(() => {
     const newBgColor =
-      counter < 0 ? `bg-secondary-amber900` : `bg-secondary-teal50`;
+      counter < 0 ? `bg-secondary-fuchsia300` : `bg-secondary-teal50`;
     setBgColor(newBgColor);
   }, [counter]);
 
@@ -41,8 +41,12 @@ export default function Additional() {
   }, [counter, updateProgress, handleBgColorChange]);
 
   return (
-    <div className={`relative ${bgColor}`}>
+    <div className={`relative ${bgColor} bg-fu`}>
       <Navbar />
+
+      <div className="animate-blob absolute -left-4 top-10 h-72 w-72 rounded-full bg-purple-300 opacity-70 mix-blend-multiply blur-xl filter"></div>
+      <div className="animate-blob absolute -right-20 top-20 h-72 w-72 rounded-full bg-yellow-300 opacity-70 mix-blend-multiply blur-xl filter"></div>
+      <div className="animate-blob absolute -bottom-10 left-20 h-72 w-72 rounded-full bg-pink-300 opacity-70 mix-blend-multiply blur-xl filter"></div>
       <div className="m-14 flex max-h-screen flex-col items-center justify-center text-center">
         <Carousel data={imgCarousel} />
       </div>

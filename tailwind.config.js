@@ -14,6 +14,7 @@ module.exports = {
         primary: "black",
         secondary: {
           fuchsia50: "var(--color-fuchsia-50)",
+          fuchsia300: "var(--color-fuchsia-300)",
           teal50: "var(--color-teal-50)",
           pink400: "var(--color-pink-400)",
           amber900: "var(--color-amber-900)",
@@ -23,6 +24,7 @@ module.exports = {
         typewriter:
           "typewriter 2s steps(var(--animation-steps-250), end) forwards, blink 2s steps(10) forwards",
         slidein: "slidein 2s",
+        blob: "blob 7s infinite",
       },
       keyframes: {
         typewriter: {
@@ -49,6 +51,20 @@ module.exports = {
           to: {
             "margin-left": "0%",
             width: "100%",
+          },
+        },
+        blob: {
+          "0%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+          "33%": {
+            transform: "translate(30px, -50px) scale(1.1)",
+          },
+          "66%": {
+            transform: "translate(-20px, 20px) scale(0.9)",
+          },
+          "100%": {
+            transform: "tranlate(0px, 0px) scale(1)",
           },
         },
       },
