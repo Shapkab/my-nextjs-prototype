@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={inter.className}>
-        <main className="flex-grow min-h-screen">{children}</main>
+        <main className="bg-secondary-fuchsia50 flex-grow">{children}</main>
         <Footer />
       </body>
     </html>

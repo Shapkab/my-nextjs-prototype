@@ -10,12 +10,14 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // colors: {
-      //   primary: "black",
-      //   secondary: {
-      //
-      //   }
-      // },
+      colors: {
+        primary: "black",
+        secondary: {
+          fuchsia50: "var(--color-fuchsia-50)",
+          teal50: "var(--color-teal-50)",
+          pink400: "var(--color-pink-400)",
+        },
+      },
       animation: {
         typewriter:
           "typewriter 2s steps(var(--animation-steps-250), end) forwards, blink 2s steps(10) forwards",

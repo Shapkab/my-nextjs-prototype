@@ -13,12 +13,12 @@ export default function About() {
         return (
           <div
             key={job.title}
-            className="hover-smooth-up transition-smooth m-9 w-2/5 flex grid grid-cols-2 place-items-center gap-3 rounded-3xl bg-amber-50 p-8 shadow-xl hover:bg-amber-100 cursor-pointer"
+            className="hover-smooth-up transition-smooth m-9 flex grid w-2/5 cursor-pointer grid-cols-2 place-items-center gap-3 rounded-3xl bg-amber-50 p-8 shadow-xl hover:bg-amber-100"
           >
             <HTag tag="h3" className="ml-5 text-center text-2xl font-semibold">
               {job.title}
             </HTag>
-            <Dropdown classname="text-blue-gray-500 gradient-pink-purple">
+            <Dropdown classname="text-blue-gray-500 bg-gradient-pink-purple">
               {job.responsibilities}
             </Dropdown>
             <ul className="m-2 font-medium text-gray-500">

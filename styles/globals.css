@@ -13,6 +13,9 @@ footer {
 @layer base {
   :root {
     --animation-steps-250: 250;
+    --color-fuchsia-50: rgb(253 244 255);
+    --color-teal-50: rgb(240 253 250);
+    --color-pink-400: rgb(244 114 182);
   }
 }
 
@@ -45,7 +48,7 @@ Fix it
 }
 
 @layer utilities {
-  .gradient-pink-purple {
+  .bg-gradient-pink-purple {
     @apply bg-gradient-to-r from-pink-300 to-purple-300;
   }
 }
