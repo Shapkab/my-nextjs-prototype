@@ -11,7 +11,7 @@ export default function Navbar() {
   const [hoveredPath, setHoveredPath] = useState(pathName);
 
   return (
-    <nav className="relative h-20 rounded border border-gray-100 px-2 py-2.5 bg-secondary-fuchsia50">
+    <nav className="bg-secondary-fuchsia50 relative h-20 rounded border border-gray-100 px-2 py-2.5">
       <ul
         className="m-5 flex flex-col items-center text-lg md:flex-row md:space-x-8 md:font-medium"
         id="nav"

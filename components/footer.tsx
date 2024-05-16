@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bottom-0 block bg-secondary-fuchsia50">
+    <footer className="bg-secondary-fuchsia50 bottom-0 block">
       <ul className="mt-3 flex-wrap text-center">
         <li>
           <Link

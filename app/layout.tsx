@@ -35,8 +35,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth h-full">
-      <body className={`${inter.className} flex flex-col min-h-screen`}>
+    <html lang="en" className="h-full scroll-smooth">
+      <body className={`${inter.className} flex min-h-screen flex-col`}>
         <main className="bg-secondary-fuchsia50 flex-grow">{children}</main>
         <Footer />
       </body>

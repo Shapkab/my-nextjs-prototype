@@ -46,7 +46,7 @@ export default function Additional() {
       <div className="m-14 flex max-h-screen flex-col items-center justify-center text-center">
         <Carousel data={imgCarousel} />
       </div>
-      <div className="flex grid h-40 grid-cols-2 place-items-center gap-3 bg-amber">
+      <div className="bg-amber flex grid h-40 grid-cols-2 place-items-center gap-3">
         <Button
           className="relative animate-bounce bg-amber-100 text-black"
           onClick={handleClick(decreaseCounter, updateProgress)}
