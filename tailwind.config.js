@@ -16,6 +16,7 @@ module.exports = {
           fuchsia50: "var(--color-fuchsia-50)",
           teal50: "var(--color-teal-50)",
           pink400: "var(--color-pink-400)",
+          amber900: "var(--color-amber-900)",
         },
       },
       animation: {
