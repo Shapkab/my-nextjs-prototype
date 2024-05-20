@@ -1,9 +1,8 @@
-import { ImgData, JobPosition, Links } from " /lib/defenitions";
+import { ContactsLinks, ImgData, JobPosition, Links } from " /lib/defenitions";
 
 export const links = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
+  { name: "About my work experience", href: "/about" },
   { name: "Additional info", href: "/additional" },
 ] as Links;
 
@@ -28,11 +27,6 @@ export const jobExperiences: JobPosition = [
       "Check pull request",
       "Configuring CI/CD",
       "Create from 0 to 1 Automation testing project",
-      "Check  1",
-      "Check  2",
-      "Check  3",
-      "Check  4",
-      "Check  5",
     ],
   },
   {
@@ -52,4 +46,8 @@ export const imgCarousel: ImgData = [
   {
     image: "https://picsum.photos/seed/random106/500/500",
   },
-];
+] as ImgData;
+
+export const contactRef: ContactsLinks = [
+  { email: "+++", wa: "++++++", inst: "++++++++" },
+] as ContactsLinks;

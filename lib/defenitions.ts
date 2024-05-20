@@ -12,3 +12,9 @@ export type JobPosition = {
 export type ImgData = {
   image: string;
 }[];
+
+export type ContactsLinks = {
+  email: string;
+  wa: string;
+  inst: string;
+}[];

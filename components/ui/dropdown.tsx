@@ -5,7 +5,7 @@ import React, { useState } from "react";
 
 export interface ItemsMenuProps {
   classname: string;
-  children: React.ReactNode[];
+  children: React.ReactNode;
 }
 
 export function Dropdown({ classname, children }: ItemsMenuProps) {
@@ -37,9 +37,9 @@ export function Dropdown({ classname, children }: ItemsMenuProps) {
         )}
         aria-labelledby="dropdownDefaultButton"
       >
-        {children.map((item, index) => {
+        {React.Children.map(children, (item, index) => {
           return (
-            <li key={index} className="p-2 text-xs ">
+            <li key={index} className="p-2 text-xs">
               {item}
             </li>
           );
