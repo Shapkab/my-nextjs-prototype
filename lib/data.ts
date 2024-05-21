@@ -48,6 +48,9 @@ export const imgCarousel: ImgData = [
   },
 ] as ImgData;
 
-export const contactRef: ContactsLinks = [
-  { email: "+++", wa: "++++++", inst: "++++++++" },
-] as ContactsLinks;
+export const contactRef: ContactsLinks = {
+  email: "+++",
+  wa: "++++++",
+  inst: "++++++++",
+  github: "https://github.com/Shapkab?tab=repositories",
+} as ContactsLinks;

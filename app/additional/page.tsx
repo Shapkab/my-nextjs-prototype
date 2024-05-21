@@ -46,13 +46,9 @@ export default function Additional() {
     handleBgColorChange();
   }, [counter, updateProgress, handleBgColorChange]);
 
-  const contactElements = contactRef.map((contact, index) => (
-    <div key={index}>
-      {Object.entries(contact).map(([key, value]) => (
-        <div key={key}>
-          <strong>{key}:</strong> {value}
-        </div>
-      ))}
+  const contactElements = Object.entries(contactRef).map(([key, value]) => (
+    <div key={key}>
+      <strong>{key}:</strong> {value}
     </div>
   ));
 
@@ -62,39 +58,41 @@ export default function Additional() {
       <div className="animate-blob absolute -left-4 top-10 h-72 w-72 rounded-full bg-purple-300 opacity-70 mix-blend-multiply blur-xl filter"></div>
       <div className="animate-blob absolute -right-20 top-20 h-72 w-72 rounded-full bg-yellow-300 opacity-70 mix-blend-multiply blur-xl filter"></div>
       <div className="animate-blob absolute -bottom-10 left-20 h-72 w-72 rounded-full bg-pink-300 opacity-70 mix-blend-multiply blur-xl filter"></div>
-
-      <Button
-        className="bg-gradient-pink-purple top-30 relative left-5"
-        onClick={() => setOpenPopup(true)}
-      >
-        My contacts
-      </Button>
-      <PopUp
-        popup={openPopup}
-        setPopup={handleRemovePopup}
-        classname="outline text-blue-gray-500 bg-gradient-pink-purple"
-      >
-        {contactElements}
-      </PopUp>
-
-      <div className="m-14 flex max-h-screen flex-col items-center justify-center text-center">
-        <Carousel data={imgCarousel} />
-      </div>
-      <div className="bg-amber flex grid h-40 grid-cols-2 place-items-center gap-3">
+      <section id="contacts">
         <Button
-          className="relative animate-bounce bg-amber-100 text-black"
-          onClick={handleClick(decreaseCounter, updateProgress)}
+          className="bg-gradient-pink-purple top-30 relative left-5"
+          onClick={() => setOpenPopup(true)}
         >
-          Boring
+          My contacts
         </Button>
-        <Button
-          className="relative animate-bounce bg-amber-100 text-black"
-          onClick={handleClick(increaseCounter, updateProgress)}
+        <PopUp
+          popup={openPopup}
+          setPopup={handleRemovePopup}
+          classname="outline text-blue-gray-500 bg-gradient-pink-purple"
         >
-          Not bad
-        </Button>
-      </div>
-      <Progressbar progress={progress} />
+          {contactElements}
+        </PopUp>
+      </section>
+      <section id="photo_bid">
+        <div className="m-14 flex max-h-screen flex-col items-center justify-center text-center">
+          <Carousel data={imgCarousel} />
+        </div>
+        <div className="bg-amber flex grid h-40 grid-cols-2 place-items-center gap-3">
+          <Button
+            className="relative animate-bounce bg-amber-100 text-black"
+            onClick={handleClick(decreaseCounter, updateProgress)}
+          >
+            Boring
+          </Button>
+          <Button
+            className="relative animate-bounce bg-amber-100 text-black"
+            onClick={handleClick(increaseCounter, updateProgress)}
+          >
+            Not bad
+          </Button>
+        </div>
+        <Progressbar progress={progress} />
+      </section>
     </div>
   );
 }

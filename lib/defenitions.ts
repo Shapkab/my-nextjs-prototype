@@ -17,4 +17,5 @@ export type ContactsLinks = {
   email: string;
   wa: string;
   inst: string;
-}[];
+  github: string;
+};
