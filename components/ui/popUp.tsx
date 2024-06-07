@@ -25,7 +25,7 @@ export default function PopUp({
   const transClass = popup ? "flex" : "hidden";
 
   return (
-    <div className="relative inset-0 left-5 flex h-fit w-fit translate-y-1/4 flex-col items-center justify-center backdrop-blur-sm">
+    <div className="translate-y-1/5 relative inset-0 left-5 flex h-fit w-fit flex-col items-center justify-center backdrop-blur-sm">
       <ul
         className={cn(
           "rounded-lg border-e-emerald-600 p-3",

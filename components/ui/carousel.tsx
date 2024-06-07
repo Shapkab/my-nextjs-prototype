@@ -28,7 +28,7 @@ export default function Carousel({
 
   return (
     <div>
-      <div className="relative h-72 w-full overflow-hidden rounded-md">
+      <div className="relative h-96 w-full overflow-hidden rounded-md shadow-lg">
         <div
           ref={carouselRef}
           style={{

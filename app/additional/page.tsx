@@ -3,9 +3,11 @@
 import Navbar from " /components/navbar";
 import Button from " /components/ui/button";
 import Carousel from " /components/ui/carousel";
+import MapNavigation from " /components/ui/mapNavigation";
+import ModalVideo from " /components/ui/modalVideo";
 import PopUp from " /components/ui/popUp";
 import Progressbar from " /components/ui/progressbar";
-import { contactRef, imgCarousel } from " /lib/data";
+import { contactRef, embedMedia, imgCarousel } from " /lib/data";
 import { useCallback, useEffect, useState } from "react";
 
 export default function Additional() {
@@ -13,6 +15,7 @@ export default function Additional() {
   const [progress, setProgress] = useState(0);
   const [bgColor, setBgColor] = useState(`bg-secondary-fuchsia50`);
   const [openPopup, setOpenPopup] = useState(false);
+  const [isModalVideoOpen, setIsModalVideoOpen] = useState(false);
   const increaseCounter = () => {
     setCounter((prevCounter) => prevCounter + 1);
   };
@@ -61,7 +64,9 @@ export default function Additional() {
       <section id="contacts">
         <Button
           className="bg-gradient-pink-purple top-30 relative left-5"
-          onClick={() => setOpenPopup(true)}
+          onClick={() => {
+            setOpenPopup((old) => !old);
+          }}
         >
           My contacts
         </Button>
@@ -73,11 +78,33 @@ export default function Additional() {
           {contactElements}
         </PopUp>
       </section>
-      <section id="photo_bid">
-        <div className="m-14 flex max-h-screen flex-col items-center justify-center text-center">
-          <Carousel data={imgCarousel} />
+      <section id="media-attachments">
+        <div className="m-5 grid grid-cols-2 gap-3">
+          <div className="ml-10 flex h-full w-2/3 flex-col items-center justify-center border-y-8 bg-teal-100 p-6 text-center">
+            <Carousel data={imgCarousel} />
+          </div>
+          <div className="mr-10 border-y-8 bg-teal-100 p-6">
+            {" "}
+            Map
+            <MapNavigation address="Ciudad de México" />
+          </div>
+          <div className="ml-10 h-96 border-y-8 bg-teal-100 p-6">
+            <Button
+              className="bg-gradient-pink-purple m-5"
+              onClick={() => setIsModalVideoOpen(true)}
+            >
+              Open youtube video
+            </Button>
+            <ModalVideo
+              isOpen={isModalVideoOpen}
+              onClose={() => setIsModalVideoOpen(false)}
+              videoId={embedMedia.youtubeId}
+            />
+          </div>
         </div>
-        <div className="bg-amber grid h-40 grid-cols-2 place-items-center gap-3">
+      </section>
+      <section id="estimate">
+        <div className="bg-amber grid h-10 grid-cols-2 place-items-center gap-3 p-5">
           <Button
             className="relative animate-bounce bg-amber-100 text-black"
             onClick={handleClick(decreaseCounter, updateProgress)}
