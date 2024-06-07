@@ -19,3 +19,7 @@ export type ContactsLinks = {
   inst: string;
   github: string;
 };
+
+export type EmbedMedia = {
+  youtubeId: string;
+};

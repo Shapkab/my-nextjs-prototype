@@ -1,4 +1,10 @@
-import { ContactsLinks, ImgData, JobPosition, Links } from " /lib/defenitions";
+import {
+  ContactsLinks,
+  EmbedMedia,
+  ImgData,
+  JobPosition,
+  Links,
+} from " /lib/defenitions";
 
 export const links = [
   { name: "Home", href: "/" },
@@ -54,3 +60,7 @@ export const contactRef: ContactsLinks = {
   inst: "++++++++",
   github: "https://github.com/Shapkab?tab=repositories",
 } as ContactsLinks;
+
+export const embedMedia: EmbedMedia = {
+  youtubeId: "PHvw0IP7dEU?si=w_wLoeA8cEEOLr2R",
+} as EmbedMedia;
