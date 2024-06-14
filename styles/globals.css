@@ -40,7 +40,7 @@ footer {
 }
 
 /*
-Dont forget
+//TODO Dont forget
 Fix it
 */
 @layer utilities {
@@ -61,36 +61,8 @@ Fix it
   }
 }
 
-/*.typewriter {*/
-/*  display: inline-block;*/
-/*  width: 100vw;*/
-/*  font-weight: 500;*/
-/*  white-space: pre-line;*/
-/*  word-break: break-all;*/
-/*  overflow: hidden;*/
-/*  border-right-color: rgb(0 0 0);*/
-/*}*/
-
 @layer utilities {
   .slidein {
     @apply animate-slidein inline-block w-screen overflow-hidden whitespace-pre-line break-all font-medium;
   }
 }
-
-/*.typewriter:before {*/
-/*  content: "";*/
-/*  position: absolute;*/
-/*  border-right: .15em solid orange;*/
-/*  inset: 0;*/
-/*  animation: typewriter;*/
-/*}*/
-
-/*.typewriter:after {*/
-/*  content: "";*/
-/*  position: absolute;*/
-/*  white-space: nowrap;*/
-/*  border-right: .15em solid orange;*/
-/*  inset: 0;*/
-/*  width: 100%;*/
-/*  animation: caret;*/
-/*}*/

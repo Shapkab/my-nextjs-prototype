@@ -24,7 +24,7 @@ export default function Page() {
       <HTag tag="h3" className="m-2 animate-bounce text-center">
         On the next page you can see all my engineering`s positions.
       </HTag>
-      <Button className="bg-gradient-pink-purple m-auto mt-3 block animate-pulse text-gray-800 hover:to-amber-400">
+      <Button className="bg-gradient-pink-purple m-auto mt-3 block animate-pulse text-gray-800 transition duration-500 hover:scale-110 hover:to-amber-400 focus:ring focus:ring-purple-300">
         <Link href="/about">Let`s go</Link>
       </Button>
     </>

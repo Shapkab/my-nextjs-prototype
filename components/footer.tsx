@@ -9,7 +9,7 @@ export default function Footer() {
       <ul className="mt-3 flex-wrap text-center">
         <li>
           <Link
-            className="select-none gap-2 rounded-lg px-4 py-2 align-middle font-sans text-xs font-bold uppercase text-amber-500 opacity-80 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            className="select-none rounded-lg px-4 py-2 align-middle font-sans text-xs font-bold uppercase text-amber-500 opacity-80 transition-all hover:bg-pink-500/10 active:bg-pink-500/30"
             href={contactRef.github}
           >
             Link to my GitHub

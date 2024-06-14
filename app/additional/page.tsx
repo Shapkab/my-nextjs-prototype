@@ -8,6 +8,7 @@ import ModalVideo from " /components/ui/modalVideo";
 import PopUp from " /components/ui/popUp";
 import Progressbar from " /components/ui/progressbar";
 import { contactRef, embedMedia, imgCarousel } from " /lib/data";
+import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
 export default function Additional() {
@@ -51,7 +52,12 @@ export default function Additional() {
 
   const contactElements = Object.entries(contactRef).map(([key, value]) => (
     <div key={key}>
-      <strong>{key}:</strong> {value}
+      <Link
+        className="select-none rounded-lg px-4 py-2 align-middle hover:bg-purple-500/10 active:bg-purple-500/30"
+        href={value}
+      >
+        <strong>{key}</strong>
+      </Link>
     </div>
   ));
 
@@ -73,7 +79,7 @@ export default function Additional() {
         <PopUp
           popup={openPopup}
           setPopup={handleRemovePopup}
-          classname="outline text-blue-gray-500 bg-gradient-pink-purple"
+          classname="bg-gradient-pink-purple"
         >
           {contactElements}
         </PopUp>
